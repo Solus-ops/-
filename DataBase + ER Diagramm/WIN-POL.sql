@@ -3,35 +3,35 @@ GO
 USE ObuvDB;
 GO
 CREATE TABLE Stg_Tovar (
-  Àðòèêóë NVARCHAR(50),
-  Íàèìåíîâàíèå NVARCHAR(200),
-  Åäèíèöà NVARCHAR(50),
-  Öåíà NVARCHAR(50),
-  Ïîñòàâùèê NVARCHAR(200),
-  Ïðîèçâîäèòåëü NVARCHAR(200),
-  Êàòåãîðèÿ NVARCHAR(200),
-  Ñêèäêà NVARCHAR(50),
-  Êîëâî NVARCHAR(50),
-  Îïèñàíèå NVARCHAR(MAX),
-  Ôîòî NVARCHAR(200)
+  Article NVARCHAR(50),
+  Name NVARCHAR(200),
+  Unit NVARCHAR(50),
+  Price NVARCHAR(50),
+  Supplier NVARCHAR(200),
+  Manufacturer NVARCHAR(200),
+  Category NVARCHAR(200),
+  Discount NVARCHAR(50),
+  Quantity NVARCHAR(50),
+  Description NVARCHAR(MAX),
+  Photo NVARCHAR(200)
 );
 
 CREATE TABLE Stg_Users (
-  Ðîëü NVARCHAR(100),
-  ÔÈÎ NVARCHAR(200),
-  Ëîãèí NVARCHAR(100),
-  Ïàðîëü NVARCHAR(100)
+  Role NVARCHAR(100),
+  FullName NVARCHAR(200),
+  Login NVARCHAR(100),
+  Password NVARCHAR(100)
 );
 
 CREATE TABLE Stg_Orders (
-  Íîìåð NVARCHAR(50),
-  Àðòèêóëû NVARCHAR(MAX),
-  ÄàòàÇàêàçà NVARCHAR(50),
-  ÄàòàÄîñòàâêè NVARCHAR(50),
-  Ïóíêò NVARCHAR(200),
-  Êëèåíò NVARCHAR(200),
-  Êîä NVARCHAR(50),
-  Ñòàòóñ NVARCHAR(100)
+  Number NVARCHAR(50),
+  Articles NVARCHAR(MAX),
+  OrderDate NVARCHAR(50),
+  DeliveryDate NVARCHAR(50),
+  Point NVARCHAR(200),
+  Client NVARCHAR(200),
+  Code NVARCHAR(50),
+  Status NVARCHAR(100)
 );
 
 CREATE TABLE Stg_PickupPoints (
@@ -215,3 +215,4 @@ LEFT JOIN Products p
     ON p.Article = r1.Token
 WHERE r1.Seq % 2 = 1;
 GO
+
